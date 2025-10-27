@@ -1,0 +1,55 @@
+    sudo yum install -y wget unzip yum-utils shadow-utils
+    sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo
+    sudo yum install terraform
+terraform -v
+terraform --help
+cloud:---------------------->aws/azure/gcp
+       -------------------------------------------------------->providers,resources,output
+
+
+Providers in Terraform:
+*******************************
+
+
+
+provider "aws_provider" {
+  region = "us-east-1"
+}
+
+Multi-provider wirh different regioins:
+********************************************
+provider "aws" {
+ alias="east"
+  region = "us-east-1"
+}
+
+provider "aws" {
+  alias  = "west"
+  region = "us-west-2"
+}
+
+what is resources in terraform:
+**********************************
+is a infrastructure object --ec2,s3,vpc,security groups,eks cluster...
+
+
+what is tag in terraform:
+***************************
+is kind of name given to resource for easy identification.
+
+ami = i-06e9cdbe65e9bca7d
+
+
+
+
+
+write a terraform script to launch virtual server in aws using ec2 as resource:
+*****************************************************************************
+
+
+
+
+
+
+
+
