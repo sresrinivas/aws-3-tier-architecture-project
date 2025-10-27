@@ -1,0 +1,86 @@
+Jenkins:
+************
+  Jenkins Architecture
+  what is jenkins
+  why we need jenkinas
+  how to configure jenkins on linux environment
+  jenkins feature
+  plug-ins
+  plug-in configurations
+  job
+  types of jobs
+ how to configure free style jobs
+ how to run the job
+ understanding various gui options to navigate arround the jenkins
+ jenkins modes: restart /saferestart mode
+ post build actions
+webhooks integrations
+integrating tools like git,github/maven/docker/java,
+declarative pipeline-configuratiuons
+multiple dsl statements
+started groovy
+master slave configurations
+Upstream and downstream project:
+**************************************
+compile--job1---upstream
+test----job2--downstream---upstream
+deploy-job3-----downstream
+Trigger builds remotely:
+***************************
+build--predefined dsl statement is available
+http://13.233.89.212:8080/job/jobone/build?token=mytoken
+
+
+build quietPeriod: 1, job: 'one', waitForStart: true
+
+pipeline
+{
+    agent any
+       stages
+       {
+             stage("runjobone")
+             {
+                 steps
+                 {
+                     script
+                     {
+             build (job:'one', propagate: false)
+                     build 'two'
+
+                     }
+                 }
+             }
+       }
+}
+unstable
+failure
+
+try {
+            sh 'mvn test'
+        } catch (Exception e) {
+            currentBuild.result = 'UNSTABLE'
+            echo "Tests failed, marking build as UNSTABLE."
+        }
+=================================================================
+*Multi-branch-Pipeline
+*helm+k8s---
+single pipeline:
+*********************
+
+git+github+maven+junit+dependencyanalysis+sonarqube+owaspdepedency+docker+dockerhub+helm+k8s+jenkins:
+************************************************************************************************************************
+8 t0 9:30
+9:30 to 12:
+****************
+
+Terraform:
+**************
+
+
+
+
+
+
+
+
+
